@@ -15,7 +15,7 @@ jobs:
         run: |
           ref=${ref##*/}
           if [[ $ref == master ]]; then
-            tags=$repo:unstable
+            tags=$repo:latest
           elif [[ $ref =~ ^([0-9.]+)-((([0-9]+[.])[0-9]+[.])([.][0-9+])*)$ ]]; then
             upstream=${BASH_REMATCH[1]}
             minor=${BASH_REMATCH[3]}x
@@ -43,6 +43,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
+          platforms: linux/arm64
           push: true
           tags: ${{ env.build_tags }}
 
