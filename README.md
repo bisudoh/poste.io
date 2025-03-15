@@ -46,13 +46,13 @@ The second variable is `SEND_ON`, which can also be set to a list of IP addresse
 
 ### Basic Usage
 
-To use this image, just replace `analogic/poste.io` in your config with `dirtsimple/poste.io`.  For example, you might use something like this as your `docker-compose.yml`, replacing `mail.example.com` with a suitable hostname  for your installation:
+To use this image, just replace `analogic/poste.io` in your config with `bisudoh/poste.io`.  For example, you might use something like this as your `docker-compose.yml`, replacing `mail.example.com` with a suitable hostname  for your installation:
 
 ```yaml
 version: "2.3"
 services:
   poste:
-    image: dirtsimple/poste.io
+    image: bisudoh/poste.io
     restart: always
     network_mode: host  # <-- a must-have for poste
 
